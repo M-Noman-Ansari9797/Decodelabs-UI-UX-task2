@@ -1,90 +1,72 @@
-# CodeAlpha_NetworkSniffer
+# The Blueprint: E-commerce Homepage Wireframe
 
-A basic Python-based network packet sniffer built as part of the **CodeAlpha Cyber Security Internship** (Task 1).
+**UI/UX Design Internship | Project 2 | DecodeLabs (Batch 2026)**
 
-This tool captures live network traffic on a machine and displays key details about each packet — source and destination IP addresses, protocol type, port numbers, and payload size — helping to understand how data flows across a network and the basics of common protocols (TCP, UDP, ICMP).
+Low-fidelity wireframes for an e-commerce homepage, designed to fix a cluttered layout and reduce customer drop-off before checkout.
 
-## 📋 Features
+## Overview
 
-- Captures live packets in real time using `scapy`
-- Identifies and displays protocol type (TCP / UDP / ICMP / Other)
-- Shows source and destination IP addresses and ports
-- Displays total packet size and payload size
-- Optional protocol filtering (e.g., capture only TCP traffic)
-- Optional packet count limit (auto-stop after N packets)
+An e-commerce brand was losing customers during the checkout process. The layout was cluttered and users were confused. This project designs the "skeleton" of the homepage, focusing only on **user flow** and **information hierarchy**.
 
-## 🛠 Tech Stack
+As the brief requires, the wireframes use **only black, white and grey**, with no images or colors.
 
-- **Language:** Python 3
-- **Library:** [Scapy](https://scapy.net/) — for packet capturing and parsing
+## Deliverables
 
-## ⚙️ Installation
+- Desktop homepage wireframe (1200px layout) with 10 annotated sections
+- Mobile homepage wireframe (390px layout) with a sticky CTA
+- User flow from landing to guest checkout
+- CTA hierarchy (primary, secondary, tertiary)
+- Design decisions table
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/M-Noman-Ansari9797/CodeAlpha_NetworkSniffer
-   cd CodeAlpha_NetworkSniffer
-   ```
+## User Flow
 
-2. Install dependencies:
-   ```bash
-   pip install scapy
-   ```
+Land on homepage → Search or pick a category → Product page → Cart review → Guest checkout
 
-3. **Windows only:** install [Npcap](https://npcap.com/) — required by Scapy to access network interfaces.
+## Key Design Decisions
 
-## ▶️ Usage
+| Principle | How it is applied |
+|---|---|
+| Z-pattern scan | Logo, nav and search across the top, diagonal through the hero, ending on the CTA button |
+| Reduce cognitive load | Four nav items, five categories, four best sellers, with whitespace between blocks |
+| Strategic CTA placement | Above the fold ("Shop Now"), mid-page ("Learn More"), end of page ("Buy Now"), sticky on mobile |
+| Trust before checkout | Shipping, returns, secure payment and reviews appear before the user commits |
+| Frictionless next step | Cart review followed by guest checkout, with no forced sign-up |
 
-> ⚠️ Packet capturing requires administrator/root privileges.
+## CTA Hierarchy
 
-**Windows** (run terminal as Administrator):
-```bash
-python network_sniffer.py
-```
+1. **Primary:** filled black button, one per view (e.g. Shop Now)
+2. **Secondary:** outlined button (e.g. Learn More)
+3. **Tertiary:** text link (e.g. See what's new)
 
-**Linux / macOS:**
-```bash
-sudo python3 network_sniffer.py
-```
+## Homepage Structure
 
-### Optional arguments
+1. Utility bar (shipping and returns)
+2. Header (logo, navigation, search, account, cart)
+3. Hero with benefit-driven headline and primary CTA
+4. Trust strip
+5. Category shortcuts
+6. Best sellers
+7. Value points with mid-page CTA
+8. Customer reviews
+9. Closing CTA
+10. Footer
 
-| Flag | Description | Example |
-|------|-------------|---------|
-| `-p`, `--protocol` | Filter by protocol (`tcp`, `udp`, `icmp`) | `python network_sniffer.py -p tcp` |
-| `-c`, `--count` | Stop after capturing N packets | `python network_sniffer.py -c 20` |
+## Tools
 
-Combine both:
-```bash
-sudo python3 network_sniffer.py -p tcp -c 20
-```
+- Wireframe built as an HTML page, exported to PDF
+- Figma: *(add link if you rebuilt it)*
 
-## 🖥 Sample Output
+## Files
 
-```
-Starting packet capture... Press Ctrl+C to stop.
+- `YourName_UIUX_Project2_Blueprint.pdf`: final wireframe document
+- `blueprint-homepage-wireframe.html`: source page
 
-TIME      PROTOCOL      SOURCE -> DESTINATION                        SIZE INFO
-----------------------------------------------------------------------------------------------------
-14:32:10  TCP           192.168.1.5:52344  ->  142.250.183.14:443    | Total len: 66 bytes | Payload: 0 bytes
-14:32:10  UDP           192.168.1.5:60321  ->  8.8.8.8:53             | Total len: 74 bytes | Payload: 32 bytes
-14:32:11  ICMP          192.168.1.5:-      ->  1.1.1.1:-              | Total len: 98 bytes | Payload: 56 bytes
-```
+## Author
 
-## 📚 What I Learned
+**Your Name**
+UI/UX Design Intern, DecodeLabs
+LinkedIn: *(add link)*
 
-- How network packets are structured (headers vs. payload)
-- The difference between TCP, UDP, and ICMP traffic
-- How IP addresses and ports identify the source and destination of communication
-- How to use Scapy to capture and parse live network traffic in Python
-- The basics of applying filters to isolate specific types of traffic
+## Acknowledgements
 
-## ⚠️ Disclaimer
-
-This tool is built strictly for **educational purposes** as part of a cyber security internship task. Only run it on networks and devices you own or have explicit permission to monitor. Unauthorized packet sniffing may violate privacy laws and organizational policies.
-
-## 🙌 Acknowledgements
-
-Built as part of the **CodeAlpha Cyber Security Internship** — Task 1: Basic Network Sniffer.
-
-- Website: [www.codealpha.tech](https://www.codealpha.tech)
+Project brief and training material by [DecodeLabs](https://www.decodelabs.tech).
