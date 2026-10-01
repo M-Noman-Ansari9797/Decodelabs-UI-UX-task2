@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project 2: The Blueprint – Homepage Wireframe</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#e6e6e6;--sheet:#fff;--ink:#111;--mid:#666;--line:#999;--fill:#d9d9d9;--soft:#f0f0f0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a2a2a;--ink:#f2f2f2}}
+:root[data-theme="dark"]{--bg:#2a2a2a;--ink:#f2f2f2}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:30px;margin:0 0 4px;letter-spacing:-.5px}
+h2{font-size:20px;margin:44px 0 6px}
+.sub{color:var(--mid);margin:0 0 18px}
+.sheet{background:var(--sheet);color:#111;border:2px solid #111;overflow:hidden}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:18px 0}
+.meta div{border:1px solid var(--line);padding:10px 12px;font-size:13px}
+.meta b{display:block;font-size:12px;color:var(--mid);font-weight:600}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0}
+.flow span{border:2px solid #111;background:var(--sheet);color:#111;padding:6px 12px;font-size:13px;font-weight:600}
+.flow i{font-style:normal;color:var(--mid)}
+/* wireframe parts */
+.ph{background:var(--fill);border:1.5px solid #555;position:relative;display:flex;align-items:center;justify-content:center;color:#444;font-size:12px;
+background-image:linear-gradient(to top right,transparent calc(50% - 1px),#777 50%,transparent calc(50% + 1px)),linear-gradient(to bottom right,transparent calc(50% - 1px),#777 50%,transparent calc(50% + 1px))}
+.ph span{background:var(--fill);padding:1px 6px}
+.sec{position:relative;padding:18px 22px;border-bottom:1.5px dashed var(--line)}
+.sec:last-child{border-bottom:0}
+.n{position:absolute;top:6px;left:6px;width:22px;height:22px;border-radius:50%;background:#111;color:#fff;font:700 12px/22px Arial;text-align:center;z-index:2}
+.row{display:flex;align-items:center;gap:14px}
+.sp{flex:1}
+.bar{height:8px;background:#bbb;margin:6px 0}
+.bar.s{width:60%}.bar.m{width:80%}
+.t{font-weight:700;font-size:13px}
+.btn{display:inline-block;background:#111;color:#fff;padding:10px 22px;font-weight:700;font-size:13px;border:2px solid #111;text-align:center}
+.btn.o{background:#fff;color:#111}
+.btn.sm{padding:6px 10px;font-size:11px;width:100%}
+.lnk{text-decoration:underline;font-size:12px;font-weight:600}
+.box{border:1.5px solid #555;padding:6px 10px;font-size:12px;color:#444;background:#fff}
+.util{background:#111;color:#fff;text-align:center;font-size:12px;padding:6px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card .ph{height:110px;margin-bottom:8px}
+.cat .ph{height:70px;margin-bottom:6px}
+.cat .t{text-align:center}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;padding:30px 22px}
+.hero .ph{height:230px}
+.h1{font-size:26px;font-weight:800;line-height:1.15;margin-bottom:8px}
+.center{text-align:center}
+.band{background:var(--soft)}
+.stars{letter-spacing:2px;font-size:12px}
+/* annotations */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:16px}
+.note{display:flex;gap:10px;background:var(--sheet);color:#111;border:1.5px solid #111;padding:10px 12px;font-size:13px}
+.note .n{position:static;flex:none}
+.note b{display:block}
+.two{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.phone{width:290px;flex:none;border:3px solid #111;border-radius:28px;background:#fff;color:#111;overflow:hidden;position:relative}
+.phone .sec{padding:12px 14px}
+.phone .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.phone .ph{height:80px;margin-bottom:6px}
+.sticky{position:sticky;bottom:0;background:#fff;border-top:2px solid #111;padding:10px 14px}
+.side{flex:1;min-width:260px}
+table{width:100%;border-collapse:collapse;background:var(--sheet);color:#111;font-size:13px}
+th,td{border:1.5px solid #111;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--fill)}
+.scroll{overflow-x:auto}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;margin-top:10px;align-items:center}
+@media(max-width:640px){.hero{grid-template-columns:1fr}.grid4,.grid5{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.sheet .row{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>The Blueprint: Homepage Wireframe</h1>
+<p class="sub">Project 2 · UI/UX Design · DecodeLabs · Low-fidelity, black, white and grey only</p>
+
+<div class="meta">
+<div><b>Problem</b>Cluttered layout is confusing shoppers and they abandon before checkout.</div>
+<div><b>Goal</b>Pass the 5-second test: what is sold, and how to buy it.</div>
+<div><b>Scope</b>Homepage (desktop and mobile) with a clear CTA hierarchy.</div>
+</div>
+
+<h2>User flow</h2>
+<p class="sub">The homepage has one job: move a visitor to a product with the fewest decisions.</p>
+<div class="flow"><span>Land on homepage</span><i>→</i><span>Search or pick a category</span><i>→</i><span>Product page</span><i>→</i><span>Cart review</span><i>→</i><span>Guest checkout</span></div>
+
+<h2>Desktop homepage (1200px layout)</h2>
+<p class="sub">Numbers match the annotations below. Placeholders are boxes with an X, text is represented by grey bars.</p>
+
+<div class="sheet">
+ <div class="sec util" style="padding:6px"><span class="n">1</span>Free shipping on orders over $50 · Free 30-day returns</div>
+
+ <div class="sec"><span class="n">2</span>
+  <div class="row">
+   <div class="ph" style="width:90px;height:34px"><span>LOGO</span></div>
+   <div class="row t" style="gap:18px"><span>Shop</span><span>New</span><span>Sale</span><span>Help</span></div>
+   <div class="box sp">Search products</div>
+   <span class="t">Account</span><span class="t">Cart (0)</span>
+  </div>
+ </div>
+
+ <div class="hero sec" style="padding:30px 22px"><span class="n">3</span>
+  <div>
+   <div class="h1">Benefit-driven headline in two lines</div>
+   <div class="bar m"></div><div class="bar s"></div>
+   <p style="margin:16px 0 0"><span class="btn">Shop Now</span> &nbsp; <span class="lnk">See what's new</span></p>
+  </div>
+  <div class="ph"><span>HERO IMAGE</span></div>
+ </div>
+
+ <div class="sec band"><span class="n">4</span>
+  <div class="grid3 t center"><div>Free shipping</div><div>Easy returns</div><div>Secure payment</div></div>
+ </div>
+
+ <div class="sec"><span class="n">5</span>
+  <div class="t" style="margin-bottom:10px">Shop by category</div>
+  <div class="grid5">
+   <div class="cat"><div class="ph"><span>IMG</span></div><div class="t">Category 1</div></div>
+   <div class="cat"><div class="ph"><span>IMG</span></div><div class="t">Category 2</div></div>
+   <div class="cat"><div class="ph"><span>IMG</span></div><div class="t">Category 3</div></div>
+   <div class="cat"><div class="ph"><span>IMG</span></div><div class="t">Category 4</div></div>
+   <div class="cat"><div class="ph"><span>IMG</span></div><div class="t">Category 5</div></div>
+  </div>
+ </div>
+
+ <div class="sec"><span class="n">6</span>
+  <div class="row" style="margin-bottom:10px"><span class="t sp">Best sellers</span><span class="lnk">View all best sellers</span></div>
+  <div class="grid4">
+   <div class="card"><div class="ph"><span>PRODUCT</span></div><div class="t">Product name</div><div class="stars">★★★★☆</div><div class="t" style="margin:4px 0 8px">$00.00</div><span class="btn sm">Add to Cart</span></div>
+   <div class="card"><div class="ph"><span>PRODUCT</span></div><div class="t">Product name</div><div class="stars">★★★★☆</div><div class="t" style="margin:4px 0 8px">$00.00</div><span class="btn sm">Add to Cart</span></div>
+   <div class="card"><div class="ph"><span>PRODUCT</span></div><div class="t">Product name</div><div class="stars">★★★★☆</div><div class="t" style="margin:4px 0 8px">$00.00</div><span class="btn sm">Add to Cart</span></div>
+   <div class="card"><div class="ph"><span>PRODUCT</span></div><div class="t">Product name</div><div class="stars">★★★★☆</div><div class="t" style="margin:4px 0 8px">$00.00</div><span class="btn sm">Add to Cart</span></div>
+  </div>
+ </div>
+
+ <div class="sec band"><span class="n">7</span>
+  <div class="grid3 center">
+   <div><div class="t">Value point 1</div><div class="bar m" style="margin:6px auto"></div></div>
+   <div><div class="t">Value point 2</div><div class="bar m" style="margin:6px auto"></div></div>
+   <div><div class="t">Value point 3</div><div class="bar m" style="margin:6px auto"></div></div>
+  </div>
+  <p class="center" style="margin:12px 0 0"><span class="btn o">Learn More</span></p>
+ </div>
+
+ <div class="sec"><span class="n">8</span>
+  <div class="t center" style="margin-bottom:10px">What customers say</div>
+  <div class="grid3">
+   <div class="box"><div class="stars">★★★★★</div><div class="bar"></div><div class="bar s"></div><div class="t">Name</div></div>
+   <div class="box"><div class="stars">★★★★★</div><div class="bar"></div><div class="bar s"></div><div class="t">Name</div></div>
+   <div class="box"><div class="stars">★★★★★</div><div class="bar"></div><div class="bar s"></div><div class="t">Name</div></div>
+  </div>
+ </div>
+
+ <div class="sec center band"><span class="n">9</span>
+  <div class="h1" style="font-size:22px">Closing statement</div>
+  <span class="btn">Buy Now</span>
+ </div>
+
+ <div class="sec"><span class="n">10</span>
+  <div class="grid4 t"><div>Shop<div class="bar s"></div><div class="bar s"></div></div><div>Help<div class="bar s"></div><div class="bar s"></div></div><div>Company<div class="bar s"></div><div class="bar s"></div></div><div>Newsletter<div class="box" style="margin-top:6px">Email</div></div></div>
+ </div>
+</div>
+
+<div class="notes">
+ <div class="note"><span class="n">1</span><div><b>Utility bar</b>Shipping and returns shown early to remove cost doubt.</div></div>
+ <div class="note"><span class="n">2</span><div><b>Header</b>Logo left, wide search, cart right. Four nav items only to limit choice overload.</div></div>
+ <div class="note"><span class="n">3</span><div><b>Hero (primary CTA)</b>One benefit headline and one filled "Shop Now" button. Secondary action is a text link so it never competes.</div></div>
+ <div class="note"><span class="n">4</span><div><b>Trust strip</b>Three short reassurances before the user scrolls.</div></div>
+ <div class="note"><span class="n">5</span><div><b>Category shortcuts</b>Visual tiles, not text links. Maximum five, so decisions stay easy.</div></div>
+ <div class="note"><span class="n">6</span><div><b>Best sellers</b>Social proof (stars) and price on every card. "Add to Cart" is the only filled button in the grid.</div></div>
+ <div class="note"><span class="n">7</span><div><b>Value stack (mid-page CTA)</b>Outlined "Learn More" re-engages users who need more reasons.</div></div>
+ <div class="note"><span class="n">8</span><div><b>Reviews</b>Real customer proof placed just before the closing CTA.</div></div>
+ <div class="note"><span class="n">9</span><div><b>Closing CTA</b>"Buy Now" for users who scrolled the whole page and are convinced.</div></div>
+ <div class="note"><span class="n">10</span><div><b>Footer</b>Help and policies in the last position, newsletter signup as a low-priority action.</div></div>
+</div>
+
+<h2>Mobile homepage (390px layout)</h2>
+<p class="sub">Same hierarchy, single column, with the primary CTA kept in thumb reach.</p>
+<div class="two">
+ <div class="phone">
+  <div class="sec"><span class="n">A</span><div class="row" style="padding-left:20px"><span class="t">☰</span><div class="ph sp" style="height:26px"><span>LOGO</span></div><span class="t">Cart</span></div></div>
+  <div class="sec"><span class="n">B</span><div class="box" style="margin-left:20px">Search products</div></div>
+  <div class="sec"><span class="n">C</span><div class="h1" style="font-size:19px;padding-left:20px">Benefit-driven headline</div><div class="ph" style="height:110px;margin:8px 0"><span>HERO IMAGE</span></div><span class="btn" style="display:block">Shop Now</span></div>
+  <div class="sec"><span class="n">D</span><div class="t" style="padding-left:20px;margin-bottom:6px">Shop by category</div><div class="row" style="gap:8px;overflow:hidden"><div class="ph" style="width:64px;height:64px;flex:none;border-radius:50%"><span>IMG</span></div><div class="ph" style="width:64px;height:64px;flex:none;border-radius:50%"><span>IMG</span></div><div class="ph" style="width:64px;height:64px;flex:none;border-radius:50%"><span>IMG</span></div><div class="ph" style="width:64px;height:64px;flex:none;border-radius:50%"><span>IMG</span></div></div></div>
+  <div class="sec"><span class="n">E</span><div class="t" style="padding-left:20px;margin-bottom:6px">Best sellers</div>
+   <div class="grid2"><div><div class="ph"><span>PRODUCT</span></div><div class="t">Name</div><div class="t">$00.00</div></div><div><div class="ph"><span>PRODUCT</span></div><div class="t">Name</div><div class="t">$00.00</div></div></div></div>
+  <div class="sticky"><span class="n" style="position:absolute;top:-11px;left:6px">F</span><span class="btn" style="display:block">Shop Now</span></div>
+ </div>
+ <div class="side">
+  <div class="notes" style="grid-template-columns:1fr;margin-top:0">
+   <div class="note"><span class="n">A</span><div><b>Compact header</b>Menu, logo and cart only.</div></div>
+   <div class="note"><span class="n">B</span><div><b>Search first</b>Full-width and above the hero because mobile shoppers search.</div></div>
+   <div class="note"><span class="n">C</span><div><b>Hero</b>Headline, image, then a full-width button (minimum 44px tap target).</div></div>
+   <div class="note"><span class="n">D</span><div><b>Swipeable categories</b>Horizontal row saves vertical space.</div></div>
+   <div class="note"><span class="n">E</span><div><b>Two-column products</b>Fewer items per row so every product is readable.</div></div>
+   <div class="note"><span class="n">F</span><div><b>Sticky CTA</b>Stays at the bottom, within thumb reach, while scrolling.</div></div>
+  </div>
+ </div>
+</div>
+
+<h2>CTA hierarchy</h2>
+<p class="sub">Three button styles only, so users always know what matters most.</p>
+<div class="sheet" style="padding:18px">
+ <div class="legend" style="gap:30px;font-size:13px">
+  <div><span class="btn">Shop Now</span><br>Primary: filled black. One per view.</div>
+  <div><span class="btn o">Learn More</span><br>Secondary: outlined.</div>
+  <div><span class="lnk">See what's new</span><br>Tertiary: text link.</div>
+ </div>
+</div>
+
+<h2>Design decisions</h2>
+<div class="scroll"><table>
+<tr><th>Principle</th><th>How it is applied</th></tr>
+<tr><td>Z-pattern scan</td><td>Logo, nav and search across the top, diagonal through the hero, ending on the CTA button.</td></tr>
+<tr><td>Reduce cognitive load</td><td>Four nav items, five categories, four best sellers. Whitespace separates each block.</td></tr>
+<tr><td>Strategic CTA placement</td><td>Above the fold (Shop Now), mid-page (Learn More), end of page (Buy Now), sticky on mobile.</td></tr>
+<tr><td>Trust before checkout</td><td>Shipping, returns, security and reviews appear before the user commits.</td></tr>
+<tr><td>Next step: checkout</td><td>Cart review followed by guest checkout, with no forced sign-up and a hidden promo code field.</td></tr>
+</table></div>
+</div>
+</body>
+</html>
